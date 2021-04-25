@@ -25,7 +25,7 @@ first_name VARCHAR(30) NOT NULL,
 last_name VARCHAR(30,2) NOT NULL,
 role_id INT(10) NOT NULL,
 manager_id INT(10),
-PRIMARY KEY (manager_id)
+PRIMARY KEY (id, manager_id)
 );
 
 FOREIGN KEY (department_id) 
