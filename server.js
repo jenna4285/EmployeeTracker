@@ -167,7 +167,8 @@ const addRole = () => {
       viewList();
       });
     };
-// Add employees
+
+    // Add employees
 const addEmployee = () => {
   inquirer
   .prompt([{
@@ -192,8 +193,8 @@ const addEmployee = () => {
   }]
   )
   .then((answer) => {
-    console.log(answer)  ;
-    const query = 'INSERT INTO employee (first_name, last_name, role_id, manager_id)';
+    console.log(answer);
+    const query = 'INSERT INTO employee SET ?';
       connection.query(query, 
         { 
           first_name: answer.first,
@@ -226,7 +227,7 @@ const updateEmployeeRole = () => {
     }
   ])
   .then((answer) => {
-    const query = 'UPDATE employee SET ? WHERE ?)';
+    const query = 'UPDATE employee SET ? WHERE ?';
     connection.query(query, 
       [
       { 
@@ -243,10 +244,6 @@ const updateEmployeeRole = () => {
     viewList();
     });
   };
-
-
-
-
 
 // Connect to db
 connection.connect((err) => {
