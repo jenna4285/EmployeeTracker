@@ -153,7 +153,7 @@ const addRole = () => {
   }]
   )
   .then((answer) => {
-      const query = 'INSERT INTO role (jobTitle, salary, department_id)';
+      const query = 'INSERT INTO role SET ?';
       connection.query(query, 
         { 
           jobTitle: answer.role,
