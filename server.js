@@ -188,11 +188,12 @@ const addEmployee = () => {
   {
     name: 'managerId',
     type: 'input',
-   message: 'What is the new employee manager id?',
+    message: 'What is the new employee manager id?',
   }]
   )
   .then((answer) => {
-      const query = 'INSERT INTO employee (first_name, last_name, role_id, manager_id)';
+    console.log(answer)  ;
+    const query = 'INSERT INTO employee (first_name, last_name, role_id, manager_id)';
       connection.query(query, 
         { 
           first_name: answer.first,
